@@ -1,7 +1,8 @@
 *{
-    margin: 0px;
+    margin: 5px;
     padding: 0px;
     box-sizing: border-box;
+}
 
     #size{
         position:absolute;
@@ -15,11 +16,99 @@
 
       .container{
           height: 100vh;
+          display: flex;
+          flex-direction: column;
       }
+     
+      .header{
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-      .height{}
+
+        &__logo{
+          font-size: 4vw;
+        }
+        &__menu{
+          display: flex;
+          font-size: 2.5vw;
+          gap:15px
+        }
+
+      }
 
       .main{
+        display: flex;
+        flex-direction: row;
+        height: 80%;
 
+        &__image{
+          background-image: url('./download.jfif');
+          background-size: contain;
+          background-repeat: no-repeat ;
+          width:50%;
+          background-position:left center;
+        }
+
+        &__text{
+          width:50% ;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+
+          &-1{
+            font-size: 10vw;
+          }
+          &-2,&-3,&-4{
+            font-size: 5vw;
+          }
+        }
+          span{
+            color: red;
+          }
+        
       }
-} 
+
+
+      @media(max-width:650px){
+        .header{
+          justify-content: center;
+          &__logo{
+            font-size: 40px
+          }
+          /*hiding the menu on mobile device*/
+          &__menu{
+            display: none;
+          }
+        }
+
+        .main{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          &__image{
+            /*image size*/
+            height: 200px;
+            width: 200px;
+            background-size: 100%;
+
+            /*rounded edges*/
+            border-radius: 100%;
+            background-position: center;
+          }
+
+          &__test{
+            width:100%;
+          }
+          &-1 {
+            display: none;
+          }
+          &-2, &-3, &-4 {
+            font-size: 30px;
+          }
+        }
+      }
